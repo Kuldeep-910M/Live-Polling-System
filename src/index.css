@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Custom component styles */
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 border border-gray-200;
+}
+
+.card-header {
+  @apply text-xl font-semibold text-gray-800 mb-4 pb-3 border-b border-gray-200;
+}
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+.input-field {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+}
+
+.progress-bar {
+  @apply w-full bg-gray-200 rounded-full h-3;
+}
+
+.progress-fill {
+  @apply h-3 rounded-full transition-all duration-300;
+}
+
+.timer {
+  @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-medium;
+}
+
+.timer.normal {
+  @apply bg-green-100 text-green-800;
+}
+
+.timer.warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.timer.danger {
+  @apply bg-red-100 text-red-800 animate-pulse;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.chat-message {
+  @apply max-w-xs p-3 rounded-lg mb-2;
+}
+
+.chat-message.teacher {
+  @apply bg-blue-100 text-blue-900 border border-blue-200;
+}
+
+.chat-message.student {
+  @apply bg-gray-100 text-gray-900 border border-gray-200;
+}
+
+/* Scrollbar styling */
+.chat-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
